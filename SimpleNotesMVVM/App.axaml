@@ -1,0 +1,21 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SimpleNotesMVVM.App"
+             xmlns:local="using:SimpleNotesMVVM"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+             <Application.Resources>
+                 <FontFamily x:Key="Pacifico">avares://SimpleNotesMVVM/Assets/Fonts#Pacifico</FontFamily>
+                 <FontFamily x:Key="Montserrat">avares://SimpleNotesMVVM/Assets/Fonts#Montserrat</FontFamily>
+                 <FontFamily x:Key="Roboto">avares://SimpleNotesMVVM/Assets/Fonts#Roboto</FontFamily>
+                 <FontFamily x:Key="Monotone">avares://SimpleNotesMVVM/Assets/Fonts#Monotone</FontFamily>
+             </Application.Resources>
+</Application>

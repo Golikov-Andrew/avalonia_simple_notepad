@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SimpleNotesMVVM.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SimpleNotesMVVM.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SimpleNotesMVVM"
+        Width="592" Height="456"
+        Closing="Window_OnClosing"
+        Opened="TopLevel_OnOpened">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowDefinitions="42,430" VerticalAlignment="Top">
+        <StackPanel x:Name="TopPanel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Orientation="Horizontal" 
+                    VerticalAlignment="Center" Margin="0" Height="42" >
+            <Label Width="110" Grid.Row="0" Grid.Column="0" Margin="0"
+                   HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Цвет панели:</Label>
+            <ComboBox Width="110" Grid.Row="0" Grid.Column="1" Margin="0" 
+                      SelectionChanged="SelectingColor_OnSelectionChanged" SelectedIndex="0"
+                      VerticalAlignment="Center">
+                <ComboBoxItem>Белый</ComboBoxItem>
+                <ComboBoxItem>Оранжевый</ComboBoxItem>
+                <ComboBoxItem>Синий</ComboBoxItem>
+                <ComboBoxItem>Жёлтый</ComboBoxItem>
+                <ComboBoxItem>Красный</ComboBoxItem>
+                <ComboBoxItem>Зелёный</ComboBoxItem>
+            </ComboBox>
+            <Label Width="68" Grid.Row="0" Grid.Column="2" Margin="0"
+                   HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Шрифт:</Label>
+            <ComboBox Width="170" Grid.Row="0" Grid.Column="3" Margin="0" 
+                      SelectionChanged="SelectingFontFamily_OnSelectionChanged" SelectedIndex="0"
+                      VerticalAlignment="Center">
+                <ComboBoxItem>Roboto</ComboBoxItem>
+                <ComboBoxItem>Pacifico</ComboBoxItem>
+                <ComboBoxItem>Monotone</ComboBoxItem>
+                <ComboBoxItem>Montserrat</ComboBoxItem>
+            </ComboBox>
+            <Label Width="70" Grid.Row="0" Grid.Column="4" Margin="0"
+                   HorizontalContentAlignment="Right" VerticalContentAlignment="Center">Размер:</Label>
+            <ComboBox Width="58" Grid.Row="0" Grid.Column="5" Margin="0" 
+                      SelectionChanged="SelectingFontSize_OnSelectionChanged" SelectedIndex="1"
+                      VerticalAlignment="Center">
+                <ComboBoxItem>12</ComboBoxItem>
+                <ComboBoxItem>14</ComboBoxItem>
+                <ComboBoxItem>16</ComboBoxItem>
+                <ComboBoxItem>18</ComboBoxItem>
+                <ComboBoxItem>20</ComboBoxItem>
+                <ComboBoxItem>22</ComboBoxItem>
+                <ComboBoxItem>24</ComboBoxItem>
+                <ComboBoxItem>30</ComboBoxItem>
+                <ComboBoxItem>42</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        
+        
+        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" 
+                 x:Name="Text1" TextWrapping="Wrap" AcceptsReturn="True" 
+                 Margin="0"></TextBox>
+    </Grid>
+
+</Window>
